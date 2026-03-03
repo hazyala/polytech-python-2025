@@ -1,0 +1,11 @@
+=== MNIST 2,4,8 Final Experiment Report ===
+Total Epochs per Model: 100
+
+[01_Baseline] Test Acc: 0.9987 / Loss: 0.0529 (Aug:False, Drop:False, L2:False)
+[02_AugOnly] Test Acc: 0.9977 / Loss: 0.0643 (Aug:True, Drop:False, L2:False)
+[03_Reg_Drop] Test Acc: 0.9990 / Loss: 0.0053 (Aug:False, Drop:True, L2:False)
+[04_Reg_L2] Test Acc: 0.9987 / Loss: 0.0085 (Aug:False, Drop:False, L2:True)
+[05_Reg_DropL2] Test Acc: 0.9977 / Loss: 0.0165 (Aug:False, Drop:True, L2:True)
+[06_Total_Drop] Test Acc: 0.9990 / Loss: 0.0326 (Aug:True, Drop:True, L2:False)
+[07_Total_L2] Test Acc: 0.9980 / Loss: 0.0239 (Aug:True, Drop:False, L2:True)
+[08_Total_ALL] Test Acc: 0.9956 / Loss: 0.0525 (Aug:True, Drop:True, L2:True)

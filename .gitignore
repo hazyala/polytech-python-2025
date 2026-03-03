@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+datasets/
+data/
+*.h5
+*.pth
+*.zip
+*.tar.gz
+*MNIST*
+models/
