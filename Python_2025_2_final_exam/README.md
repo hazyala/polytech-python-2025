@@ -1,86 +1,36 @@
-# 🐍 Python GUI Programming Project
+# Tkinter 계산기와 주스 키오스크
 
-이 저장소는 **Python Tkinter**를 활용하여 개발한 두 가지 GUI 애플리케이션, **계산기**와 **주스 키오스크**의 소스 코드를 포함하고 있습니다.
+Python GUI 수업 과제로 작성한 계산기와 메뉴 선택형 키오스크. 기존 개발 기록은 Python 3.10 이상·VS Code 기준이다.
 
-## 👤 제작자 정보
-* **학과:** 인공지능 소프트웨어과 
-* **학번:** 2501110202
-* **성명:** 김해민
-* **개발 환경:** Python 3.10+, VS Code
+## 계산기
 
----
+`CalculatorApp`이 버튼 입력과 수식을 관리한다. 사칙연산·소수점·초기화, 0 나눗셈과 잘못된 수식의 오류 메시지를 처리한다.
 
-## 📂 프로젝트 구조 (Project Structure)
+![계산기 화면](README/calculator.png)
 
-전체 프로젝트의 폴더 구조는 다음과 같습니다.
+## 주스 키오스크
 
-    PYTHON_2025_PROJECT
-    ├── assets/                 # 키오스크 메뉴 이미지 폴더 (JPG)
-    │   ├── banana_protein.jpg
-    │   ├── citrus_mix.jpg
-    │   └── ... (기타 과일 및 컵 이미지)
-    ├── calculator/             # 계산기 프로젝트 폴더
-    │   └── calculator.py       # 계산기 소스 코드
-    ├── juice_kiosk/            # 주스 키오스크 프로젝트 폴더
-    │   └── juice_kiock.py      # 키오스크 소스 코드
-    ├── calculator.png          # 계산기 실행 스크린샷
-    ├── juice.png               # 키오스크 실행 스크린샷
-    └── README.md               # 프로젝트 설명 문서
+`KioskApp`은 메뉴 가격과 사이즈 추가 요금을 딕셔너리로 보관한다. 메뉴·사이즈 선택 시 합계를 갱신하고 Pillow로 이미지를 읽는다. 이미지를 못 읽으면 대체 텍스트를 표시한다. 결제 API나 주문 DB는 없다.
 
----
+![키오스크 화면](README/juice.png)
 
-## 🚀 1. 계산기 (Calculator)
+## 실행
 
-기본적인 사칙연산 기능을 제공하며, 사용자 친화적인 GUI 디자인이 적용된 계산기 프로그램입니다.
+Tkinter가 포함된 Python과 데스크톱 화면이 필요하다. 키오스크는 Pillow를 추가로 설치한다. 이 폴더에서 실행한다.
 
-### 🎨 주요 기능 및 특징
-* **사칙연산 지원:** 덧셈, 뺄셈, 곱셈, 나눗셈 및 소수점 계산 가능
-* **예외 처리:** 0으로 나누거나 잘못된 수식 입력 시 에러 메시지 출력
-* **디자인:** 가독성을 높인 테마와 직관적인 버튼 배치
-* **초기화 기능:** 'C' 버튼을 통한 입력 초기화
+```bash
+python -m pip install pillow
+python calculator/calculator.py
+python juice_kiosk/juice_kiosk.py
+```
 
-### 📸 실행 화면
-![계산기 실행화면](/README/calculator.png)
+`juice_kiosk.py`는 `__file__` 기준 상위 `assets/`를 읽는다. 현재 터미널 경로가 아니라 소스 파일 위치에 상대적인 경로다. 파일 이름은 기존 README의 `juice_kiock.py` 오타를 바로잡았다. 화면 링크도 존재하지 않는 `/README/` 대신 이 폴더의 PNG를 가리킨다.
 
----
+```text
+calculator/calculator.py   계산기 UI와 이벤트
+juice_kiosk/juice_kiosk.py 메뉴·가격·이미지 처리
+assets/                   과일·컵 이미지
+README/                  기존 실행 화면
+```
 
-## 🍹 2. 주스 키오스크 (Juice Kiosk)
-
-이미지와 텍스트를 활용하여 메뉴를 선택하고, 사이즈별 가격을 자동으로 계산해주는 키오스크 프로그램입니다.
-
-### 🎨 주요 기능 및 특징
-* **이미지 기반 메뉴판:** `Pillow` 라이브러리를 활용하여 JPG 이미지를 로드 및 리사이징하여 표시
-* **동적 가격 계산:**
-    * 메뉴 선택 및 컵 사이즈(기본/중간/대) 변경 시 총 금액 자동 합산
-    * 선택한 옵션에 따른 실시간 주문 내역 표시
-* **데이터 관리:** 딕셔너리(Dictionary)를 활용한 효율적인 메뉴 및 가격 데이터 관리
-* **오류 처리:** 이미지 파일이 없을 경우 대체 텍스트 버튼 생성
-
-### 📸 실행 화면
-![키오스크 실행화면](/README/juice.png)
-
----
-
-## ⚙️ 설치 및 실행 방법 (How to Run)
-
-이 프로젝트를 실행하기 위해서는 외부 이미지 라이브러리인 `Pillow`가 필요합니다.
-
-### 1. 필수 라이브러리 설치
-터미널에 아래 명령어를 입력하여 라이브러리를 설치해주세요.
-
-    pip install pillow
-
-### 2. 계산기 실행
-
-    cd calculator
-    python calculator.py
-
-### 3. 키오스크 실행
-
-    cd juice_kiosk
-    python juice_kiosk.py
-
----
-
-## 💡 참고 사항
-* **이미지 경로:** `assets` 폴더는 각 프로젝트 폴더(`calculator`, `juice_kiosk`)의 상위 폴더에 위치해야 이미지가 정상적으로 로드됩니다.
+자동 테스트와 패키징 설정은 없다. GUI를 띄우고 메뉴·사이즈·초기화·오류 입력을 직접 확인하는 과제다.
