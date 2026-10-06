@@ -16,6 +16,6 @@ Tkinter 계산기·주스 키오스크 과제와 TensorFlow/Keras·scikit-learn 
 | `AI_Project2/` | Python·scikit-learn 분류 실습, 노트북과 데이터 |
 | `Python_2025_2_final_exam/` | Tkinter GUI 두 개와 메뉴 asset |
 
-ML 스크립트는 날짜별 실험이며 공통 pipeline이나 requirements가 없다. 각 파일의 import, 데이터 경로, 모델 저장 경로를 확인한다. 데이터·이미지 파일이 저장소 대부분을 차지하므로 파일 수를 프로젝트 코드 규모로 해석하지 않는다.
+ML 스크립트는 날짜별 실험이며 공통 pipeline이나 requirements가 없다. 각 파일의 import, 데이터 경로, 모델 저장 경로를 확인한다. 학습 데이터와 이미지도 코드와 함께 보관한다.
 
-GUI 실행은 하위 README를 따른다. ML은 TensorFlow/Keras·NumPy·Matplotlib 또는 scikit-learn 등의 파일별 의존성과 dataset이 필요하며 하나의 설치 명령으로 모두 재현된다고 안내하지 않는다.
+GUI 실행은 하위 README를 따른다. ML 스크립트는 파일별로 TensorFlow/Keras·NumPy·Matplotlib 또는 scikit-learn과 해당 dataset을 준비해 실행한다.

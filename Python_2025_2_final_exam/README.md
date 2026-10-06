@@ -1,6 +1,6 @@
 # Tkinter 계산기와 주스 키오스크
 
-Python GUI 수업 과제로 작성한 계산기와 메뉴 선택형 키오스크. 기존 개발 기록은 Python 3.10 이상·VS Code 기준이다.
+Python GUI 수업 과제로 작성한 계산기와 메뉴 선택형 키오스크. Python 3.10 이상을 개발 환경으로 사용했다.
 
 ## 계산기
 
@@ -24,7 +24,7 @@ python calculator/calculator.py
 python juice_kiosk/juice_kiosk.py
 ```
 
-`juice_kiosk.py`는 `__file__` 기준 상위 `assets/`를 읽는다. 현재 터미널 경로가 아니라 소스 파일 위치에 상대적인 경로다. 파일 이름은 기존 README의 `juice_kiock.py` 오타를 바로잡았다. 화면 링크도 존재하지 않는 `/README/` 대신 이 폴더의 PNG를 가리킨다.
+`juice_kiosk.py`는 `__file__` 기준 상위 `assets/`를 읽는다. 현재 터미널 경로가 아니라 소스 파일 위치에 상대적인 경로다.
 
 ```text
 calculator/calculator.py   계산기 UI와 이벤트
