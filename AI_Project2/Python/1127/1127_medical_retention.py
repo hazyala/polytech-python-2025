@@ -23,7 +23,8 @@ df['AppointmentDay'] = pd.to_datetime(df['AppointmentDay'])
 df['ScheduledDay'] = pd.to_datetime(df['ScheduledDay'])
 
 # 대기일 = 진료일 - 예약일
-df['waiting_day'] = df['AppointmentDay'].dt.dayofyear - df['ScheduledDay'].dt.dayofyear
+# dayofyear끼리 빼면 연도가 바뀌는 예약에서 틀릴 수 있어서 날짜 자체를 빼고 일 수로 변환
+df['waiting_day'] = (df['AppointmentDay'].dt.normalize() - df['ScheduledDay'].dt.normalize()).dt.days
 
 # 대기일 음수(예약일이 진료일보다 뒤인 경우), 나이 110 초과 제거
 df = df[df.waiting_day >= 0]
